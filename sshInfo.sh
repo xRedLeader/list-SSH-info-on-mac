@@ -23,7 +23,7 @@ echo '--------------------------------------------'
 for i in "${!arrayOptions[@]}"; do
 	printf "%-25s %s \n" "${arrayOptions[$i]}" "${arrayValues[$i]}"
 
-	if [[ ${arrayOptions[$i]} == "IdentityFile"* ]] ; then
+	if [ ${arrayOptions[$i]} == "IdentityFile" ] || [ ${arrayValues[$i]} == "password" ] ; then
 		echo '--------------------------------------------'
 	fi 
 done
