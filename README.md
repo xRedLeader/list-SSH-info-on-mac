@@ -4,3 +4,5 @@ script to list your ssh information on mac. Add script to $home/.ssh directory a
 alias sshinfo='bash $HOME/.ssh/sshInfo.sh'
 
 in your .bash_profile to access it form anywhere
+
+todo: add another entry to config file for .ssh
