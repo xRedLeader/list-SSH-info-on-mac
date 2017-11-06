@@ -14,26 +14,22 @@ while [ "$1" != "" ]; do
                                 ;;
         -h | --help ) 
             printf "\n"
-            echo "Usage: my_test [OPTIONS]"
+            echo "Usage: sshopt [OPTIONS]"
             echo "OPTION includes:"
-            echo "     -f | --file -sets the .ssh config file if you have placed it 
-            anywhere than $HOME/.ssh/config"
-            echo "     -v | --version - prints out version information for this script"
-            echo "     -H | --host - prints options from specific host"
-            echo "     -h | --help - displays this message"
-            printf "\n"
+            echo -e "     -f | --file - sets the .ssh config file if you have placed it \n\tanywhere than $HOME/.ssh/config\n"
+            echo -e "     -v | --version - prints out version information for this script\n"
+            echo -e "     -H | --host - prints options from specific host\n"
+            echo -e "     -h | --help - displays this message\n"
             exit
             ;;
         * ) 
             printf "\n"
             echo "Invalid option: $1"
             echo "Usage: sshInfo [OPTIONS]"
-            echo "     -f | --file -sets the .ssh config file if you have placed it 
-            anywhere than $HOME/.ssh/config"
-            echo "     -v | --version - prints out version information for this script"
-            echo "     -H | --host - prints options from specific host"
-            echo "     -h | --help - displays this message"
-            printf "\n"
+            echo -e "     -f | --file -sets the .ssh config file if you have placed it \n\tanywhere than $HOME/.ssh/config\n"
+            echo -e "     -v | --version - prints out version information for this script\n"
+            echo -e "     -H | --host - prints options from specific host\n"
+            echo -e "     -h | --help - displays this message\n"
             exit
             ;;
     esac
@@ -103,7 +99,7 @@ else
     for i in "${!arrayOptions[@]}"; do
         printf "%-25s %s \n" "${arrayOptions[$i]}" "${arrayValues[$i]}"
 
-        if [ ${arrayOptions[$i]} == "IdentityFile" ] || [ ${arrayValues[$i]} == "password" ] ; then
+        if [ "${arrayOptions[$i]}" == "IdentityFile" ] || [ "${arrayValues[$i]}" == "password" ] ; then
             echo '--------------------------------------------'
         fi 
     done
