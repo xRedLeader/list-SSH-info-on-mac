@@ -5,4 +5,7 @@ alias sshinfo='bash $HOME/.ssh/sshInfo.sh'
 
 in your .bash_profile to access it form anywhere
 
-todo: add another entry to config file for .ssh
+todo: 
+add another entry to config file for .ssh
+add in autocomplete for hosts
+
