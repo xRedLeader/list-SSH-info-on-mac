@@ -50,6 +50,7 @@ increment=0
 
 while IFS= read -r line
 do
+    [[ -z $line ]] && continue
     # ignore all commented lines
     if [[ $line = \#* ]] ; then
         filler="gone"
