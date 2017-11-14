@@ -1,14 +1,44 @@
 #!/bin/bash
 VERSION="1.0.0"
 
+secure_copy()
+{
+	# scp using -ssh keys
+	# read -e -p "File Path:" GF_DIR #(will allow autocomplete on commandline still)
+}
+
+copy_rsa()
+{
+	# ssh-copy-id user@123.45.56.78 - or -
+	# cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+}
+
+gen_ssh()
+{
+	ssh-keygen -t rsa
+}
+
+auto_complete()
+{
+
+}
+
 while [ "$1" != "" ]; do
     case $1 in
+	-ac | --auto-complete )	auto_complete()
+				;;
+	-c | --copy-rsa )	copy_rsa
+				;;
         -f | --file )           shift
                                 filename=$1
                                 ;;
         -H | --host )           shift
                                 host=$1
                                 ;;
+	-g | --gen-key )	gen_ssh
+				;;
+	-scp | --sec-cp )	secure_copy
+				;;
         -v | --version )        echo "Version: $VERSION"
                                 exit
                                 ;;
